@@ -17,7 +17,7 @@ Weblogic server creation steps
 This is to deploy Weblogic application Server. Weblogic is used to deploy enterprise JAVA applications.
 Weblogic should contain below servers:
 
-   1.Admin Server  
+   1. Admin Server  
    2. managed servers
    
    Managed servers can be 0 or many and in production,managed servers are clustered and applications are deployed to managed servers. managed servers are tightly coupled with Admin Server.
@@ -35,7 +35,7 @@ Weblogic should contain below servers:
 
        kubectl create -f weblogic/persistant-volume.yml
 	   
-	   Note: recoomended approach for multinode architechture for Weblogic is to use NFS. Used storage a slocal NFS. provided path:  "/refresh/user_projects/domains/weblogic"
+	   Note: recomended approach for multinode architechture for Weblogic is to use NFS. Used storage a slocal NFS. provided path:  "/refresh/user_projects/domains/weblogic"
 
 3. Create Volume claim.
 
@@ -94,7 +94,7 @@ Weblogic should contain below servers:
 	  ==> Click "Locka nd Edit" in the left pane.
 	  ==> Click on "Install" on the right pane.
 	  ==> Click on "user_projects" from the patch and then click "applications" .
-	  ==> Seelct the radio button "kan.war"  and click Next.
+	  ==> Selct the radio button "kan.war"  and click Next.
 	  ==> Select "Install this deployment as an application" and click Next .
 	  ==> Select "Cluster1 ==>  All servers in the cluster". Click next and click "Finish".
 	  ==> Click on "Activate Changes" on left pane.

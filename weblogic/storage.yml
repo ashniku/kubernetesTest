@@ -1,0 +1,10 @@
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: storage-weblogic
+provisioner: kubernetes.io/no-provisioner
+#volumeBindingMode: WaitForFirstConsumer
+reclaimPolicy: Retain
+mountOptions: #these options
+  - uid=1000
+  - gid=1000

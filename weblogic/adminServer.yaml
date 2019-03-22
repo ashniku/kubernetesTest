@@ -1,0 +1,43 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: admin-server
+  labels:
+    type: back-end
+    server: app-server
+
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: admin
+      labels:
+        app: admin-server
+        type: backend
+        env: development
+
+    spec:
+        hostname: admin-server
+        containers:
+          - name: admin-server
+            image: ashniku123/weblogic12.2.1.3:withoutDB
+            ports:
+              - containerPort: 7001
+                name: weblogic-port
+
+            volumeMounts:
+              - mountPath: /u01/oracle/user_projects
+                name: weblogic-storage
+
+
+        volumes:
+          - name: weblogic-storage
+            persistentVolumeClaim:
+              claimName: pv-claim-weblogic
+
+
+
+
+  selector:
+    matchLabels:
+      app: admin-server

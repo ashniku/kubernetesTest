@@ -1,0 +1,21 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: pv-volume-weblogic
+  labels:
+    type: local
+spec:
+  storageClassName: storage-weblogic
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+#    path: "/refresh/home/ohs"
+    path: "/refresh/user_projects/domains/weblogic"
+    type: DirectoryOrCreate
+
+
+
+
+    #https://kubernetes.io/docs/tasks/configure-pod-container/configure-persistent-volume-storage/

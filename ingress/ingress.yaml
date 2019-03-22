@@ -1,0 +1,14 @@
+# An Ingress with 2 hosts and 3 endpoints
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: route-to-managed-servers
+spec:
+  rules:
+   - http:
+      paths:
+        - path: /kan
+          backend:
+            serviceName: managed-server
+            servicePort: 8001
+

@@ -1,13 +1,10 @@
-# kubernetesTest
+
 RBAC rules
 ================
 
 Run this as a cluster-admin.
 
    kubectl create -f rbac/roles.yaml
-
-Database MongoDb creation steps
-====================================
 
 
 
